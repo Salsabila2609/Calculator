@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Toolbar for title -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#6488A6"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_collapseParallaxMultiplier="0.7"
+        app:layout_collapseMode="pin"
+        app:title="CA-LCULATOR"
+        app:titleTextColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Display for the user's operation (e.g., "9+3") -->
+
+    <!-- Display for the result (e.g., "12") -->
+
+    <TextView
+        android:id="@+id/operationTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="end"
+        android:padding="13dp"
+        android:text="0"
+        android:textColor="#979393"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/resultTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.781"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="end"
+        android:text="0"
+        android:textSize="48sp"
+        android:textColor="#000000"
+        android:background="@drawable/rounded_box"
+        android:padding="16dp"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/operationTextView"
+        app:layout_constraintBottom_toTopOf="@id/gridLayout"/>
+
+    <!-- Calculator Buttons -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:columnCount="4"
+        app:layout_constraintTop_toBottomOf="@id/resultTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Row 1 -->
+        <Button
+            android:id="@+id/buttonC"
+            style="@style/CalculatorButton"
+            android:text="C"
+            android:backgroundTint="#C7DCE7"/>
+
+        <Button
+            android:id="@+id/buttonParenthesesOpen"
+            style="@style/CalculatorButton"
+            android:text="("/>
+
+        <Button
+            android:id="@+id/buttonParenthesesClose"
+            style="@style/CalculatorButton"
+            android:text=")"/>
+
+        <Button
+            android:id="@+id/buttonDivide"
+            style="@style/CalculatorButton"
+            android:text="/"/>
+
+        <!-- Row 2 -->
+        <Button
+            android:id="@+id/button7"
+            style="@style/CalculatorButton"
+            android:text="7"/>
+
+        <Button
+            android:id="@+id/button8"
+            style="@style/CalculatorButton"
+            android:text="8"/>
+
+        <Button
+            android:id="@+id/button9"
+            style="@style/CalculatorButton"
+            android:text="9"/>
+
+        <Button
+            android:id="@+id/buttonMultiply"
+            style="@style/CalculatorButton"
+            android:text="*"/>
+
+        <!-- Row 3 -->
+        <Button
+            android:id="@+id/button4"
+            style="@style/CalculatorButton"
+            android:text="4"/>
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/CalculatorButton"
+            android:text="5"/>
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/CalculatorButton"
+            android:text="6"/>
+
+        <Button
+            android:id="@+id/buttonSubtract"
+            style="@style/CalculatorButton"
+            android:text="-"/>
+
+        <!-- Row 4 -->
+        <Button
+            android:id="@+id/button1"
+            style="@style/CalculatorButton"
+            android:text="1"/>
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/CalculatorButton"
+            android:text="2"/>
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/CalculatorButton"
+            android:text="3"/>
+
+        <Button
+            android:id="@+id/buttonAdd"
+            style="@style/CalculatorButton"
+            android:text="+"/>
+
+        <!-- Row 5 -->
+        <Button
+            android:id="@+id/buttonAC"
+            style="@style/CalculatorButton"
+            android:text="AC"
+            android:backgroundTint="#C7DCE7"/>
+
+        <Button
+            android:id="@+id/button0"
+            style="@style/CalculatorButton"
+            android:text="0"/>
+
+        <Button
+            android:id="@+id/buttonDot"
+            style="@style/CalculatorButton"
+            android:text="."/>
+
+        <Button
+            android:id="@+id/buttonEquals"
+            style="@style/CalculatorButton"
+            android:text="="/>
+
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
